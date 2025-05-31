@@ -1,0 +1,50 @@
+﻿@page
+@model WebApplication1.Pages.mainPageModel
+@{
+	Layout = null;
+}
+<style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937; 
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.account-name {
+  font-size: 1rem;
+}
+
+.account-icon {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+</style>
+<header class="main-header">
+    <div class="logo">Hello @Model.activeName</div>
+    <div class="account">
+      
+    </div>
+  </header>
