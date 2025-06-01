@@ -84,7 +84,7 @@ namespace WebApplication1.Pages
             if (condition)
             {
 
-                SetActiveEmail(email);
+                SetActiveEmail(email.ToLower());
                 return RedirectToPage("./mainPage");
 
             }

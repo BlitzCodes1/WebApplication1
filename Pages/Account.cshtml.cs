@@ -1,13 +1,16 @@
 using System.Data.SQLite;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
 
 namespace WebApplication1.Pages
 {
-    public class mainPageModel : PageModel
+    public class AccountModel : PageModel
     {
         public string activeName;
         public string activeEmail;
+
+        public Dictionary<string, string> activeUser= new Dictionary<string, string>();
 
         private void GetAciveEmail()
         {
@@ -20,14 +23,14 @@ namespace WebApplication1.Pages
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandText = sqlQuery;
-                   
+
                     using (SQLiteDataReader reader = command.ExecuteReader())
                     {
 
                         if (reader.Read())
                         {
 
-                         activeEmail = reader["ActiveEmail"].ToString();
+                            activeEmail = reader["ActiveEmail"].ToString();
 
                         }
                     }
@@ -36,11 +39,14 @@ namespace WebApplication1.Pages
 
 
         }
-        private void GetAciveName()
+     
+     
+        
+        private void GetAciveInfo()
         {
-            string sqlQuery = $"SELECT name FROM Resturant WHERE  email = @activeEmail";
+            
 
-
+            string sqlQuery = $"SELECT * FROM Resturant WHERE  email = @activeEmail";
             using (SQLiteConnection connection = new SQLiteConnection("Data Source=Resturant.db"))
             {
                 connection.Open();
@@ -55,7 +61,13 @@ namespace WebApplication1.Pages
                         if (reader.Read())
                         {
 
-                            activeName = reader["name"].ToString();
+                            
+
+                            activeUser.Add("name", reader["name"].ToString());
+                            activeUser.Add("email", reader["email"].ToString());
+                            activeUser.Add("datetime", reader["datetime"].ToString());
+                            activeUser.Add("phone", reader["phone"].ToString());
+
 
                         }
                     }
@@ -68,13 +80,13 @@ namespace WebApplication1.Pages
 
         public void OnGet()
         {
-            GetAciveEmail();    
-            GetAciveName();
-          
+            GetAciveEmail();
+           
+            GetAciveInfo();
         }
         public void OnPost()
         {
-           
+          
 
         }
     }

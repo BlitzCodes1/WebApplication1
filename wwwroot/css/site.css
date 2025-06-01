@@ -277,3 +277,10 @@ tr:hover {
         padding: 8px;
     }
 }
+ast{
+    color :red ; 
+}
+.op{
+    font-size:0.8rem;
+    color : gray ;
+}
