@@ -1,7 +1,7 @@
 ﻿@page
 @model WebApplication1.Pages.AccountModel
 @{
-    Layout = null ;
+  Layout = null ;
 }
 
 <!DOCTYPE html>
@@ -32,6 +32,8 @@
         background: white;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        
+    
         }
 
         header {
@@ -138,11 +140,17 @@
         }
 
         }
+
+        
+
     </style>
 </head>
 <body>
     <div class="container">
+
         <header>
+            
+                
             <h1>Hello, @Model.activeUser["name"]</h1>
             <p class="email">@Model.activeEmail</p>
         </header>
@@ -156,28 +164,96 @@
             <div class="detail-group">
                 <span class="detail-label">Member Since</span>
                 <div class="detail-value">@Model.activeUser["datetime"]</div>
+            </div> 
+            <div class="detail-group">
+                <span class="detail-label">Email</span>
+                <div class="detail-value">@Model.activeUser["email"]</div>
             </div>
 
-            <div class="detail-group">
-                <span class="detail-label">Phone Number</span>
-                @if (Model.activeUser["phone"].Any())
-                {
-                    <div class="detail-value">@Model.activeUser["phone"]</div>
-                }
-                else
-                {
-                    <div class="detail-value">Not Availabe</div>
-                }
-            </div> 
+           
         </div>
 
         <div class="actions">
-            <a asp-page="/edit">
-                <button class="btn btn-primary" >Edit Account</button>
+            
+            <a asp-page="/mainPage">
+                <button style = "background : green "class="btn btn-primary2" >Back</button>
             </a>
             <a asp-page="/index">
                 <button class="btn btn-primary2" >Logout</button>
-            </a>
+            </a><br><br>
+                <a asp-page ="/Delete">
+                <button style = "background : red ; " class="btn btn-primary2" id="actionBtn"  >Delete Account</button>
+                </a>
+  @*  <script> *@
+  @*   document.getElementById("actionBtn").addEventListener("click", function () { *@
+  @*     showConfirmBox("Are you sure you want to proceed?", function () { *@
+  @*       alert("Action confirmed!"); *@
+  @*     }); *@
+  @*   }); *@
+
+  @*   function showConfirmBox(message, onConfirm) { *@
+  @*     // Create overlay *@
+  @*     const overlay = document.createElement("div"); *@
+  @*     overlay.style.position = "fixed"; *@
+  @*     overlay.style.top = "0"; *@
+  @*     overlay.style.left = "0"; *@
+  @*     overlay.style.width = "100%"; *@
+  @*     overlay.style.height = "100%"; *@
+  @*     overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; *@
+  @*     overlay.style.display = "flex"; *@
+  @*     overlay.style.alignItems = "center"; *@
+  @*     overlay.style.justifyContent = "center"; *@
+  @*     overlay.style.zIndex = "1000"; *@
+
+  @*     // Create box *@
+  @*     const box = document.createElement("div"); *@
+  @*     box.style.backgroundColor = "#fff"; *@
+  @*     box.style.padding = "20px"; *@
+  @*     box.style.borderRadius = "8px"; *@
+  @*     box.style.boxShadow = "0 4px 12px rgba(0,0,0,0.3)"; *@
+  @*     box.style.textAlign = "center"; *@
+  @*     box.style.width = "300px"; *@
+
+  @*     const text = document.createElement("p"); *@
+  @*     text.innerText = message; *@
+
+  @*     const yesBtn = document.createElement("button"); *@
+  @*     yesBtn.innerText = "Yes"; *@
+  @*     yesBtn.style.margin = "10px"; *@
+  @*     yesBtn.style.padding = "8px 16px"; *@
+  @*     yesBtn.style.backgroundColor = "#4CAF50"; *@
+  @*     yesBtn.style.color = "white"; *@
+  @*     yesBtn.style.border = "none"; *@
+  @*     yesBtn.style.borderRadius = "4px"; *@
+  @*     yesBtn.style.cursor = "pointer"; *@
+
+  @*     const noBtn = document.createElement("button"); *@
+  @*     noBtn.innerText = "No"; *@
+  @*     noBtn.style.margin = "10px"; *@
+  @*     noBtn.style.padding = "8px 16px"; *@
+  @*     noBtn.style.backgroundColor = "#f44336"; *@
+  @*     noBtn.style.color = "white"; *@
+  @*     noBtn.style.border = "none"; *@
+  @*     noBtn.style.borderRadius = "4px"; *@
+  @*     noBtn.style.cursor = "pointer"; *@
+
+  @*     yesBtn.onclick = function () { *@
+  @*       onConfirm(); *@
+  @*       document.body.removeChild(overlay); *@
+  @*     }; *@
+
+  @*     noBtn.onclick = function () { *@
+  @*       document.body.removeChild(overlay); *@
+  @*     }; *@
+
+  @*     box.appendChild(text); *@
+  @*     box.appendChild(yesBtn); *@
+  @*     box.appendChild(noBtn); *@
+  @*     overlay.appendChild(box); *@
+  @*     document.body.appendChild(overlay); *@
+  @*   } *@
+  @* </script> *@
+
         </div>
     </div>
 </body>

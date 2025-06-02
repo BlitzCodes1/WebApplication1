@@ -39,9 +39,6 @@ namespace WebApplication1.Pages
 
 
         }
-     
-     
-        
         private void GetAciveInfo()
         {
             
@@ -61,14 +58,10 @@ namespace WebApplication1.Pages
                         if (reader.Read())
                         {
 
-                            
-
                             activeUser.Add("name", reader["name"].ToString());
                             activeUser.Add("email", reader["email"].ToString());
                             activeUser.Add("datetime", reader["datetime"].ToString());
-                            activeUser.Add("phone", reader["phone"].ToString());
-
-
+                          
                         }
                     }
                 }
@@ -80,8 +73,7 @@ namespace WebApplication1.Pages
 
         public void OnGet()
         {
-            GetAciveEmail();
-           
+            GetAciveEmail(); 
             GetAciveInfo();
         }
         public void OnPost()
