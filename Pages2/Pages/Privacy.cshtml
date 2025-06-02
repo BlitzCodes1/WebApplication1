@@ -1,0 +1,53 @@
+﻿@page
+@model PrivacyModel
+@{
+        ViewData["Title"] = "Privacy Policy";
+        Layout = null; 
+
+}
+
+ <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .name {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+
+  
+      .name {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+  
+<div class="container">
+    <a asp-page ="index">Back</a>
+    <div class="title">Created By</div>
+    <div class="name">Amer All</div>
+    <div class="name">Adel Haytham</div>
+    <div class="name">Yazan Bargous</div>
+  </div>
