@@ -17,23 +17,7 @@
 
         <label> 
                 <input type="text" name="password" placeholder = Password > 
-         </label>
-
-         <label> 
-             <op class="op"><ast>*</ast> Optional</op>
-            <input type="text" id="numericInput" onkeypress="return isNumberKey(event)">
-
-            <script>
-                function isNumberKey(evt) {
-                    var charCode = (evt.which) ? evt.which : evt.keyCode;
-                    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                        return false;
-                    }
-                    return true;
-                }
-            </script>
-         </label>
-       
+         </label><br>
 
     <div class="form-group gender-group">
         <label>Gender</label>

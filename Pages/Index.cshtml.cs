@@ -18,11 +18,6 @@ namespace WebApplication1.Pages
         {
             _logger = logger;
         }
-       
-
-        
-
-       
 
 
         private bool VerifyUser(string email , string password )
@@ -74,6 +69,7 @@ namespace WebApplication1.Pages
  
    
         public  bool condition;
+
         public IActionResult OnPost()
         {
             string password = Request.Form["password"];
@@ -84,7 +80,7 @@ namespace WebApplication1.Pages
             if (condition)
             {
 
-                SetActiveEmail(email.ToLower());
+                SetActiveEmail(email.Trim().ToLower());
                 return RedirectToPage("./mainPage");
 
             }

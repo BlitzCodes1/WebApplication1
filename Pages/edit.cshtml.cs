@@ -117,7 +117,7 @@ namespace WebApplication1.Pages
             string phone = Request.Form["phone"];
             string name = Request.Form["name"];
 
-            UpdateData(name, email.ToLower(), phone, password);
+            
 
         }
     }

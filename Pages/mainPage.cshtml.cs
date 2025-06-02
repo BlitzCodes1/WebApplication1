@@ -69,12 +69,11 @@ namespace WebApplication1.Pages
         public void OnGet()
         {
             GetAciveEmail();    
-            GetAciveName();
-          
+            GetAciveName();    
         }
         public void OnPost()
         {
-           
+            string username = Request.Form["username"];
 
         }
     }
